@@ -1,4 +1,4 @@
-export default function Home() {
+function Signup() {
     return (
 <div>
       <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/jk0X5z9/Group-6.png)'}}>
@@ -57,3 +57,4 @@ export default function Home() {
 
 );
 }
+export default Signup;

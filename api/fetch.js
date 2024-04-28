@@ -1,5 +1,6 @@
+"use client"
 import axios from 'axios';
-export async function getVideos() {
+async function getVideos() {
     const options = {
     method: 'GET',
     url: 'https://tiktok-scraper7.p.rapidapi.com/feed/search',
@@ -24,3 +25,5 @@ export async function getVideos() {
         console.error(error);
     }
 };
+
+export default getVideos;

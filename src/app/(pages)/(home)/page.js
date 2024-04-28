@@ -1,6 +1,5 @@
-
 import { FaArrowRight } from "react-icons/fa6";
-export default function Home() {
+function Home() {
   return (
 
 <div>
@@ -34,3 +33,4 @@ export default function Home() {
 </div>
   );
 }
+export default Home;

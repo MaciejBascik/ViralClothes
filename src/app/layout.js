@@ -8,7 +8,7 @@ export const metadata = {
   description: "ViralClothes | The best viral outfits for everyone",
 };
 
-export default function RootLayout({ children }) {
+function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -66,3 +66,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export default RootLayout;

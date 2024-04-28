@@ -1,7 +1,7 @@
 "use client";
 import { FaArrowRight } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
-export default function Home() {
+function Login() {
     const router = useRouter()
  
     async function handleSubmit(event) {
@@ -58,3 +58,4 @@ export default function Home() {
     </div>
   );
 }
+export default Login;
