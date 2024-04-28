@@ -35,19 +35,17 @@ export default function Home() {
                   <label className="label">
                     <span className="text-base label-text">Email</span>
                   </label>
-                  {/* Użycie inputa z ustawieniem typu 'email' */}
                   <input type="email" placeholder="Email Address" className="w-full input input-bordered input-primary bg-white" required />
                 </div>
                 <div>
                   <label className="label">
                     <span className="text-base label-text">Password</span>
                   </label>
-                  {/* Użycie inputa z ustawieniem typu 'password' */}
                   <input type="password" placeholder="Enter Password" className="w-full input input-bordered input-primary bg-white" required />
                 </div>
                 <div >
                   <a className="text-xs text-gray-600 hover:underline hover:text-blue-600">Forget Password?</a><br/>
-                  <a className="text-xs text-gray-600 hover:underline hover:text-blue-600">You don't have account? Sign-up</a>
+                  <a className="text-xs text-gray-600 hover:underline hover:text-blue-600">You don&apos;t have account? Sign-up</a>
                 </div>
                 <div>
                   <button className="btn bg-gradient-to-r from-[#000000] to-[#001354] text-white">Log In</button>
