@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,16 +15,16 @@ function RootLayout({ children }) {
         <header className="flex items-center justify-between font-['DM Sans']">
         <div className="navbar bg-[#EAEEFE]">
               <div className="flex-1">
-                <a className="btn btn-ghost text-[18px] ml-10 font-light" style={{color:"black"}}>made by <span className="font-[600]">ViralClothes</span></a>
+                <Link href="/" className="btn btn-ghost text-[18px] ml-10 font-light" style={{color:"black"}}>made by <span className="font-[600]">ViralClothes</span></Link>
               </div>
               <div className="flex-none"> 
                 <ul className="menu menu-horizontal px-1 text-[16px] mr-10">
-                  <li style={{color:"black", opacity:"60%"}}><a>About</a></li>
-                  <li style={{color:"black", opacity:"60%"}}><a>Features</a></li>
-                  <li style={{color:"black", opacity:"60%"}}><a>Customers</a></li>
-                  <li style={{color:"black", opacity:"60%"}}><a>Updates</a></li>
-                  <li style={{color:"black", opacity:"60%"}}><a>Help</a></li>
-                  <li><a className="btn btn-sm bg-black h-9 ml-2 text-[16px]" style={{color:"white"}}>Pricing</a></li>
+                  <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
+                  <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
+                  <li style={{color:"black", opacity:"60%"}}><Link href="/#customers">Customers</Link></li>
+                  <li style={{color:"black", opacity:"60%"}}><Link href="/#updates">Updates</Link></li>
+                  <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
+                  <li><Link href="/#pricing" className="btn btn-sm bg-black h-9 ml-2 text-[16px]" style={{color:"white"}}>Pricing</Link></li>
                 </ul>
               </div>
             </div>
@@ -55,9 +55,8 @@ function RootLayout({ children }) {
       </nav> 
       <nav>
         <h6 className="footer-title">Legal</h6> 
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
+        <a href="https://www.termsofservicegenerator.net/live.php?token=Q9aLbgeCrrtFGI5oEsUMV9AzE09i7soA" className="link link-hover ">Terms of use</a>
+        <a href="https://www.termsfeed.com/live/8dea4463-b798-4ba5-88e4-a091ce091e7c" className="link link-hover">Privacy policy</a>
       </nav>
     </footer>
     </body>
