@@ -25,16 +25,16 @@ function Feed() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-center m-[100px] ">
                       
                         {clothes.map((e, index) => (
-                            <div key={e.video_id} className="card  h-[25rem] bg-gradient-to-r from-[#000000] to-[#1c1f29] shadow-xl">
+                            <div key={e.id} className="card  h-[25rem] bg-gradient-to-r from-[#000000] to-[#1c1f29] shadow-xl">
                                 <figure>
-                                    <img src={e.cover} className="w-full max-h-[15rem] object-cover" alt="Video Cover" />
+                                    <img src={e.url} className="w-full max-h-[15rem] object-cover" alt="Video Cover" />
                                 </figure>
                                 <div className="card-body">
                                     <h2 className="card-title flex justify-between items-center">
-                                        <span>{e.author.nickname.slice(0, 6)}</span>
+                                        <span>{/*e.author.nickname.slice(0, 6)*/}</span>
                                         <div className="badge badge-secondary bg-white border-white">🔥TOP</div>
                                     </h2>
-                                    <p className="text-[15px] text-left">{e.title.slice(0, 28)}...</p>
+                                    <p className="text-[15px] text-left">{/*e.title.slice(0, 28)*/}...</p>
                                     <div className="card-actions justify-end">
                                         <div className="badge badge-outline">{e.genre}</div>
                                         <div className="badge badge-outline">{e.type}</div>
