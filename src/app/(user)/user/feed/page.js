@@ -20,7 +20,7 @@ function Feed() {
 
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/SdXNbqQ/Rectangle-4.png)' }}>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/SdXNbqQ/Rectangle-4.png)'}}>
                 <div className="text-center text-neutral-content">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-center m-[100px] ">
                       
