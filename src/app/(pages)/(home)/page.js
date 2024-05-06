@@ -25,8 +25,8 @@ function Home() {
         <div className="text-center text-neutral-content max-w-[50%]">
           <div>
             <button className="btn btn-sm bg-transparent h-9 ml-2 text-[14px] hover:bg-transparent" style={{color:"black"}}>Find clothes for you </button>
-            <h1 className="mb-5 text-[90px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354] ">A more effective way to find clothes</h1>
-            <p className="mb-5 text-[22px] text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">Effortlessly find new clothes designs based on TikTok trending algorithm in just minutes. New designs, Viral brands, Adjusted specially for you</p>
+            <h1 className="mb-5  lg:text-[80px] md:text-[50px] sx:text-[45px] text-[47px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354] ">A more effective way to find clothes</h1>
+            <p className="mb-5 lg:text-[22px]  md:text-[17px] sm:text-[18px] text-[18px] text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">Effortlessly find new clothes designs based on TikTok trending algorithm in just minutes. New designs, Viral brands, Adjusted specially for you</p>
             <button><Link href="/#pricing" className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}}>Get access</Link></button>
             <button><Link href="/#about" className="btn btn-sm bg-transparent border-none shadow-none h-9 ml-2 text-[16px] hover:bg-[#eaeefe27] " style={{color:"black"}}>Learn more <FaArrowRight/> </Link></button>
           </div>
