@@ -9,6 +9,7 @@ import Link from "next/link";
 function Home() {
   const router = useRouter()
   const params = useParams()
+  console.log(params)
   return (
 
 <div>
