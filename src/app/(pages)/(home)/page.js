@@ -14,6 +14,7 @@ function Home() {
   const authCode = searchParams.get("code")
   return (
 <>
+<Suspense fallback={<div>Loading...</div>}>
 <header className="flex items-center justify-between font-['DM Sans']">
             <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
                 <div className="flex-1">
@@ -24,13 +25,11 @@ function Home() {
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
-                    <Suspense>
                     {authCode ? (
                         <li style={{color:"black", opacity:"60%"}}><Link href="/user/feed">Feed</Link></li>
                     ) : (
                         <li><LoginButton>Log in</LoginButton></li>
                     )}
-                    </Suspense>
                 </ul>
             </div>
         </header>
@@ -64,6 +63,7 @@ function Home() {
 
 
 </div>
+</Suspense>
 </>
   );
 }
