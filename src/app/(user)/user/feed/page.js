@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import getVideos from "@/app/api/fetch";
-
+import getUser from "@/app/api/token";
 function Feed() {
     const [clothes, setClothes] = useState([
         { id: 1, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
@@ -9,13 +9,21 @@ function Feed() {
     ]);
 
     const [videos, setVideos] = useState([]);
+    const [user, setUser] = useState([]);
     const [clothingCategories, setClothingCategories] = useState([]);
     const [clothingTypes, setClothingTypes] = useState([]);
 
     useEffect(() => {
+        getUser().then(response => {
+            console.log("getting user info")
+            setUser(response);
+        }).catch(err => {
+            console.log("Error getting user data");
+        });
         getVideos().then(response => {
             setVideos(response.data?.data?.videos);
         });
+
     }, []);
 
     return (

@@ -2,9 +2,10 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
+
 const inter = Inter({ subsets: ["latin"] });
 //import { getSession } from '@auth0/nextjs-auth0';
-import Link from 'next/link';
+
 
 export const metadata = {
   title: "ViralClothes | The best viral outfits for everyone",
@@ -17,26 +18,6 @@ async function RootLayout({ children }) {
     <html lang="en">
       
       <body className={inter.className}>
-        
-          <header className="flex items-center justify-between font-['DM Sans']">
-      <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
-        <div className="flex-1">
-          <Link href="/" className="btn btn-ghost text-[18px] md:ml-10 font-light" style={{color:"black"}}>made by <span className="font-[600]">MaciejBaścik</span></Link>
-        </div>
-        
-            <ul className="menu menu-horizontal px-2 text-[16px] mr-10">
-              <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
-              <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
-              <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
-              <li><Link href="/api/auth/login" className="btn btn-sm bg-black h-9 ml-2 text-[16px]" style={{color:"white"}}>Sign in</Link></li>
-            </ul>
-
-
-      </div>
-    </header>
-
-
-
         {children}
 
 
