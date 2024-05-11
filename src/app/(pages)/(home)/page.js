@@ -7,14 +7,19 @@ import Link from "next/link";
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 
-
+function Params() {
+  const searchParams  = useSearchParams();
+  const authCode = searchParams.get("code");
+  return authCode;
+}
 
 function Home() {
-  const searchParams  = useSearchParams();
-  const authCode = searchParams.get("code")
+
   return (
 <>
-<Suspense fallback={<div>Loading...</div>}>
+<Suspense fallback={<div>Loading params...</div>}>
+  {Params()}
+</Suspense>
 <header className="flex items-center justify-between font-['DM Sans']">
             <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
                 <div className="flex-1">
@@ -63,7 +68,7 @@ function Home() {
 
 
 </div>
-</Suspense>
+
 </>
   );
 }
