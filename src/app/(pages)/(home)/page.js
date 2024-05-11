@@ -16,29 +16,30 @@ function Params() {
 function Home() {
 
   return (
-<>
-<Suspense fallback={<div>Loading params...</div>}>
-  {Params()}
+    <>
+      <Suspense fallback={<div>Loading params...</div>}>
+        {Params()}
+      </Suspense>
 
-<header className="flex items-center justify-between font-['DM Sans']">
-            <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
-                <div className="flex-1">
-                    <Link href="/" className="btn btn-ghost text-[18px] md:ml-10 font-light" style={{color:"black"}}>made by <span className="font-[600]">MaciejBaścik</span></Link>
-                </div>
-                
-                <ul className="menu menu-horizontal px-2 text-[16px] mr-10">
-                    <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
-                    <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
-                    <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
-                    {Params ? (
-                        <li style={{color:"black", opacity:"60%"}}><Link href="/user/feed">Feed</Link></li>
-                    ) : (
-                        <li><LoginButton>Log in</LoginButton></li>
-                    )}
-                </ul>
-            </div>
-        </header>
-        </Suspense>
+      <header className="flex items-center justify-between font-['DM Sans']">
+        <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
+          <div className="flex-1">
+            <Link href="/" className="btn btn-ghost text-[18px] md:ml-10 font-light" style={{color:"black"}}>made by <span className="font-[600]">MaciejBaścik</span></Link>
+          </div>
+          
+          <ul className="menu menu-horizontal px-2 text-[16px] mr-10">
+            <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
+            <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
+            <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
+            {Params() ? (
+              <li style={{color:"black", opacity:"60%"}}><Link href="/user/feed">Feed</Link></li>
+            ) : (
+              <li><LoginButton>Log in</LoginButton></li>
+            )}
+          </ul>
+        </div>
+      </header>
+
 
 <div>
       <div className="hero min-h-screen " id="hero" style={{backgroundImage: 'url(https://i.ibb.co/jk0X5z9/Group-6.png)'}}>
