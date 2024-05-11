@@ -5,11 +5,13 @@ import { FaArrowRight } from "react-icons/fa6";
 import LoginButton from '../../../../components/LoginButton';
 import Link from "next/link";
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
+
+
 
 function Home() {
   const searchParams  = useSearchParams();
   const authCode = searchParams.get("code")
-  console.log(authCode);
   return (
 <>
 <header className="flex items-center justify-between font-['DM Sans']">
@@ -22,11 +24,13 @@ function Home() {
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
+                    <Suspense>
                     {authCode ? (
                         <li style={{color:"black", opacity:"60%"}}><Link href="/user/feed">Feed</Link></li>
                     ) : (
                         <li><LoginButton>Log in</LoginButton></li>
                     )}
+                    </Suspense>
                 </ul>
             </div>
         </header>
