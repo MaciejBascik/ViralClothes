@@ -18,8 +18,6 @@ function Home() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading params...</div>}>
-        {authCode && (
           <header className="flex items-center justify-between font-['DM Sans']">
             <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
               <div className="flex-1">
@@ -38,8 +36,8 @@ function Home() {
               </ul>
             </div>
           </header>
-        )}
-      </Suspense>
+
+
 
       <div>
         <div className="hero min-h-screen " id="hero" style={{backgroundImage: 'url(https://i.ibb.co/jk0X5z9/Group-6.png)'}}>
