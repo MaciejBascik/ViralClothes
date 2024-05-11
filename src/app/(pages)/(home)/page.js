@@ -1,3 +1,4 @@
+'use client'
 import { FaArrowRight } from "react-icons/fa6";
 import LoginButton from '../../../../components/LoginButton';
 import Link from "next/link";
