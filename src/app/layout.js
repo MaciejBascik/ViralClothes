@@ -1,9 +1,7 @@
-'use client'
+
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { Suspense } from 'react';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,40 +10,15 @@ export const metadata = {
 };
 
 async function RootLayout({ children }) {
-  const router = useRouter();
-  const [authCode, setAuthCode] = useState(null);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    setAuthCode(code);
-  }, []);
-
+  //const session = await getSession();
   return (
     <html lang="en">
       
       <body className={inter.className}>
-        <header className="flex items-center justify-between font-['DM Sans']">
-              <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row"> 
-                <div className="flex-1">
-                  <Link href="/" className="btn btn-ghost text-[18px] md:ml-10 font-light" style={{color:"black"}}>made by <span className="font-[600]">MaciejBaścik</span></Link>
-                </div>
-                
-                <ul className="menu menu-horizontal px-2 text-[16px] mr-10">
-                  <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
-                  <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
-                  <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
-                  {authCode ? (
-                    <li style={{color:"black", opacity:"60%"}}><Link href="/user/feed">Feed</Link></li>
-                  ) : (
-                    <li><LoginButton>Log in</LoginButton></li>
-                  )}
-                </ul>
-              </div>
-            </header>
 
 
 
+        
         {children}
 
 
