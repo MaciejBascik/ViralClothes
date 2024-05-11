@@ -30,7 +30,7 @@ function Home() {
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#about">About</Link></li>
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#features">Features</Link></li>
                     <li style={{color:"black", opacity:"60%"}}><Link href="/#help">Help</Link></li>
-                    {authCode ? (
+                    {Params ? (
                         <li style={{color:"black", opacity:"60%"}}><Link href="/user/feed">Feed</Link></li>
                     ) : (
                         <li><LoginButton>Log in</LoginButton></li>
