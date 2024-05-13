@@ -9,7 +9,7 @@ const LoginButton = ({children}) => {
     };
 
     return (
-<button className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}} onClick={handleLogin}>{children}</button>
+        <button className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}} onClick={handleLogin}>{children}</button>
     );
 };
 
