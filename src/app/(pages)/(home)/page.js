@@ -81,7 +81,7 @@ function Home() {
         <p
           className="mb-5 lg:text-[22px]  md:text-[17px] sm:text-[18px] text-[18px] text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">
           Discover the hottest fashion trends effortlessly with ViralClothes, the ultimate web app powered by
-          cutting-edge machine learning technology. Dive into the world of TikTok's most viral videos.</p>
+          cutting-edge machine learning technology. Dive into the world of TikTok&apos;s most viral videos.</p>
         <div className="cards flex gap-6 p-2  mt-[2.5rem]">
           <div className="card w-[31rem] h-[33rem] bg-[#EAEEFE] shadow-xl">
             <figure className="px-10 pt-10">
