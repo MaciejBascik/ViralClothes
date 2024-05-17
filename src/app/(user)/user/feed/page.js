@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import getVideos from "@/app/api/fetch";
 import Link from "next/link";
 import getUserInfo from "@/app/api/fetchUserInfo";
-import getUser from "@/app/api/token";
+import {getUser} from "@/app/api/token";
 
 
 function Feed() {
@@ -18,13 +18,14 @@ function Feed() {
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const codeA = params.get("code");
-        setAuthCode(codeA);
-
-      console.log("esz " + codeA);
+        console.log(codeA);
     
-      getUser(codeA).then(data => console.log(data)).catch(error => console.error('Error:', error));
-
-    }, []);
+        if (codeA) {
+            getUser(codeA)
+              .then(data => console.log(data))
+              .catch(error => console.error('Error:', error));
+          }
+        }, []);
 
 
 

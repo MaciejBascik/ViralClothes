@@ -1,4 +1,4 @@
-async function getUser(code) {
+export async function getUser(code) {
     const url = 'https://open.tiktokapis.com/v2/oauth/token/';
     const headers = {
       'Content-Type': 'application/x-www-form-urlencoded',
