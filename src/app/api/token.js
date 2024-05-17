@@ -1,30 +1,27 @@
-"use client"
-import axios from 'axios';
-import qs from 'qs';
-
-export default async function getUser(code) {
-    const data = qs.stringify({
-        'client_key': 'aw56hlbjs9cydo18',
-        'client_secret': '8ITb87gRwCOFSURt5FgECyhYqT0OCfXw',
-        'code': code,
-        'grant_type': 'authorization_code',
-        'redirect_uri': 'https://viralclothes.vercel.app/user/feed/'
-    });
-
-    const options = {
-        method: 'POST',
-        url: 'https://open.tiktokapis.com/v2/oauth/token/',
-        data: data,
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Cache-Control': 'no-cache'
-        }
+async function getUser(code) {
+    const url = 'https://open.tiktokapis.com/v2/oauth/token/';
+    const headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Cache-Control': 'no-cache'
     };
-
-    try {
-        const response = await axios.request(options);
-        return response;
-    } catch (error) {
-        console.error(error);
+    const body = new URLSearchParams({
+      'client_key': 'aw56hlbjs9cydo18',
+      'client_secret': '8ITb87gRwCOFSURt5FgECyhYqT0OCfXw',
+      'code': code,
+      'grant_type': 'authorization_code',
+      'redirect_uri': 'https://viralclothes.vercel.app/user/feed/'
+    });
+  
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: headers,
+      body: body.toString()
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-};
+  
+    const data = await response.json();
+    return data;
+  }

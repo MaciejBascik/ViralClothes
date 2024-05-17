@@ -20,20 +20,13 @@ function Feed() {
         const codeA = params.get("code");
         setAuthCode(codeA);
 
-      console.log(authCode)
+      console.log("esz ", codeA)
     
-      getUser(authCode).then(response => {
-        console.log(response)
+      getUser(codeA)
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
 
-    }).catch((err) =>
-    console.log("ERR:", err));
-
-    /*getVideos(authCode).then(response => {
-        setVideos(response);
-
-    });*/
-
-    }, [authCode]);
+    }, []);
 
 
 
