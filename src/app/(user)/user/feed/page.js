@@ -20,11 +20,9 @@ function Feed() {
         const codeA = params.get("code");
         setAuthCode(codeA);
 
-      console.log("esz ", codeA)
+      console.log("esz " + codeA);
     
-      getUser(codeA)
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
+      getUser(codeA).then(data => console.log(data)).catch(error => console.error('Error:', error));
 
     }, []);
 
