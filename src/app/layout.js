@@ -7,13 +7,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "ViralClothes | The best viral outfits for everyone",
   description: "ViralClothes | The best viral outfits for everyone",
+  icon: 'logo.jpg',
+
 };
 
 async function RootLayout({ children }) {
   //const session = await getSession();
   return (
     <html lang="en">
-      
+      <head>
+      <link
+  rel="icon"
+  href="src/app/logo.jpg"
+/>
+      </head>
       <body className={inter.className}>
 
 

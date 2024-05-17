@@ -1,6 +1,6 @@
 "use client"
 import axios from 'axios';
-export default async function getUserInfo(authBearer) {
+ async function getUserInfo(authBearer) {
     const options = {
     method: 'POST',
     url: 'https://open.tiktokapis.com/v2/oauth/token/?fields=open_id,union_id,avatar_url,display_name',
@@ -16,3 +16,4 @@ export default async function getUserInfo(authBearer) {
         console.error(error);
     }
 };
+export default getUserInfo;

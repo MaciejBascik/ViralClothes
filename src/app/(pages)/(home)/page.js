@@ -3,18 +3,16 @@ import { FaArrowRight } from "react-icons/fa6";
 import LoginButton from '../../../../components/LoginButton';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { Suspense } from 'react';
 
 function Home() {
-  const router = useRouter();
   const [authCode, setAuthCode] = useState(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
     setAuthCode(code);
-  }, []);
+    
+  }, [authCode]);
 
   return (
     <><header className="flex items-center justify-between font-['DM Sans']">
