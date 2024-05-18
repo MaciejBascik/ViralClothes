@@ -1,36 +1,13 @@
 "use client"
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
-
+import { getUser } from '../../../../lib/apiClient';
+import { getVideos } from "../../../../lib/apiGetVideos";
 function Feed() {
-    const [authCode, setAuthCode] = useState(null);
     const [videos, setVideos] = useState([]);
     const [user, setUser] = useState([]);
     const [clothingCategories, setClothingCategories] = useState([]);
     const [clothingTypes, setClothingTypes] = useState([]);
-
-    async function getUser(code) {
-        const url = '/api/token';
-        const headers = {
-          'Content-Type': 'application/json'
-        };
-        const body = JSON.stringify({ code });
-      
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: headers,
-          body: body
-        });
-      
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-      
-        const data = await response.json();
-        return data;
-      }
-
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
@@ -41,6 +18,10 @@ function Feed() {
             getUser(codeA)
               .then(data => console.log(data))
               .catch(error => console.error('Error:', error));
+
+             
+
+              
           }
         }, []);
 
