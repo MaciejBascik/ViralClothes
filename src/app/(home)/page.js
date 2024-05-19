@@ -117,8 +117,8 @@ function Home() {
   <div className="hero min-h-screen" id="signup"
     style={{backgroundImage: 'url(https://i.ibb.co/gmbsT6L/Sign-up.png)', objectFit:"cover"}}>
     <div className="text-center text-neutral-content items-center" >
-        <button className="btn btn-sm bg-transparent h-9 ml-2 text-[14px] hover:bg-transparent"
-          style={{color:"black"}}>Make your life easier - Sign Up for Our App Today! </button>
+        <button className="btn btn-sm bg-transparent h-9 mb-2 text-[14px] hover:bg-transparent"
+          style={{color:"black"}}>Make your life easier </button>
         <h1
           className="mb-5  lg:text-[80px] md:text-[50px] sx:text-[45px] text-[47px] mx-[20px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">
           Join our community</h1>
