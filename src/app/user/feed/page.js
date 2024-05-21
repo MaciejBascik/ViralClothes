@@ -31,10 +31,10 @@ function Feed() {
               .catch(error => console.error('Error:', error));
 
               
-          }
+          }*/
         }, []);
 
-*/
+
 
     const [clothes, setClothes] = useState([
         { id: 1, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
