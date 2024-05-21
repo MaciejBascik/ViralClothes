@@ -14,11 +14,17 @@ function Feed() {
         const params = new URLSearchParams(window.location.search);
         const codeA = params.get("code");
         console.log(codeA);
-    
+    /*
         if (codeA) {
             getUser(codeA)
-              .then(data => setAuth(data.access_token))
+              .then(data => {
+                setAuth(data.access_token);
+                console.log(auth);
+            
+            })
               .catch(error => console.error('Error:', error));
+
+
 
               getVideos(auth)
               .then(data => setVideos(data))
@@ -28,7 +34,7 @@ function Feed() {
           }
         }, []);
 
-
+*/
 
     const [clothes, setClothes] = useState([
         { id: 1, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
