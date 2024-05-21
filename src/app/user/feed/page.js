@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getUser } from '../../../../lib/apiClient';
 import { getVideos } from "../../../../lib/apiGetVideos";
 function Feed() {
+    const [auth, setAuth] = useState(null);
     const [videos, setVideos] = useState([]);
     const [user, setUser] = useState([]);
     const [clothingCategories, setClothingCategories] = useState([]);
@@ -16,10 +17,10 @@ function Feed() {
     
         if (codeA) {
             getUser(codeA)
-              .then(data => console.log(data))
+              .then(data => setAuth(data.access_token))
               .catch(error => console.error('Error:', error));
 
-              getVideos(codeA)
+              getVideos(auth)
               .then(data => setVideos(data))
               .catch(error => console.error('Error:', error));
 
