@@ -3,7 +3,7 @@ const LoginButton = ({children}) => {
         const csrfState = Math.random().toString(36).substring(2);
         const client_key = 'aw56hlbjs9cydo18';
         const redirect_uri = 'https://viralclothes.vercel.app/user/feed/';
-        const scope = 'user.info.basic,video.upload,video.publish';
+        const scope = 'user.info.basic,video.upload,video.publish,video.list,user.info.stats,user.info.profile,artist.certification.update,artist.certification.read';
         const state = csrfState;
         window.location.href = `https://www.tiktok.com/v2/auth/authorize/?client_key=${client_key}&redirect_uri=${redirect_uri}&scope=${scope}&response_type=code&state=${state}`;
     };
