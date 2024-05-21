@@ -19,7 +19,9 @@ function Feed() {
               .then(data => console.log(data))
               .catch(error => console.error('Error:', error));
 
-             
+              getVideos(codeA)
+              .then(data => setVideos(data))
+              .catch(error => console.error('Error:', error));
 
               
           }

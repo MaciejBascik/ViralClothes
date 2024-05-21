@@ -18,7 +18,7 @@ async function RootLayout({ children }) {
       <head>
       <link
   rel="icon"
-  href="src/app/logo.jpg"
+  href="favicon.ico"
 />
       </head>
       <body className={inter.className}>
