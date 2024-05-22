@@ -1,3 +1,4 @@
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -15,11 +16,13 @@ async function RootLayout({ children }) {
   //const session = await getSession();
   return (
     <html lang="en">
+      <UserProvider>
       <head>
       <link
   rel="icon"
   href="favicon.ico"
 />
+
       </head>
       <body className={inter.className}>
 
@@ -54,7 +57,7 @@ async function RootLayout({ children }) {
 
 
     </body>
-
+    </UserProvider>
     </html>
   );
 }

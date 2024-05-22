@@ -2,17 +2,10 @@
 import { FaArrowRight } from "react-icons/fa6";
 import LoginButton from '../../../components/LoginButton';
 import Link from "next/link";
-import { useState, useEffect } from 'react';
-
+import { useUser } from '@auth0/nextjs-auth0/client';
 function Home() {
-  const [authCode, setAuthCode] = useState(null);
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    setAuthCode(code);
-    
-  }, [authCode]);
+  const { user, error, isLoading } = useUser();
 
   return (
     <><header className="flex items-center justify-between font-['DM Sans']">
@@ -32,10 +25,20 @@ function Home() {
       <li style={{color:"black", opacity:"60%"}}>
         <Link href="mailto:maciej.b4scik@gmail.com">Help</Link>
       </li>
-      {authCode ? (
+      {user && (
       <li style={{color:"black", opacity:"60%"}}>
         <Link href="/user/feed">Feed</Link>
       </li>
+
+      )}
+
+      {user ? (
+        <div>
+      <li style={{color:"black", fontWeight:"500"}}>
+        <Link href="/user/info">@{user.nickname}</Link>
+      </li>
+
+      </div>
       ) : (
       <li className="md:ml-2">
         <LoginButton>Log in</LoginButton>
@@ -57,7 +60,7 @@ function Home() {
           className="mb-5 lg:text-[22px]  md:text-[17px] sm:text-[18px] text-[18px] text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">
           Celebrate the joy of finding new clothes <br /> in much easier way than ever before, <br /> from designers for
           clients</p>
-        <LoginButton>Log in with tiktok</LoginButton>
+          {!user ? (<LoginButton>Log in with tiktok</LoginButton>) : (<button className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}}>You are logged in.</button>)}
         <button>
           <Link href="/#about"
             className="btn btn-sm bg-transparent border-none shadow-none h-9 ml-2 text-[16px] hover:bg-[#eaeefe27] "
@@ -125,7 +128,7 @@ function Home() {
         <p
           className="mb-5 md:mx-[180px] mx-[20px] lg:text-[22px]  md:text-[17px] sm:text-[18px] text-[18px]  text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">
           Are you always on the lookout for the latest fashion trends? Join our community by signing up for our app and stay ahead of the curve! Our app is your ultimate destination for finding trending clothes effortlessly. Here&apos;s why you should sign up now:</p>
-          <LoginButton>Join our community now!</LoginButton>
+          {!user && <LoginButton>Join our community now!</LoginButton>}
     </div>
     
   </div>

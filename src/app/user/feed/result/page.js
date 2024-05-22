@@ -1,51 +1,40 @@
 "use client"
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import getVideos from "../../../../pages/api/fetch";
+import { getVideos } from "../../../../../lib/apiGetVideos";
 import { useUser } from '@auth0/nextjs-auth0/client';
-import LoginButton from "../../../../components/LoginButton";
+import LoginButton from "../../../../../components/LoginButton";
 
 
 function Feed() {
-    const categories = [
-        { id: 1, name: "Streetwear" },
-        { id: 2, name: "Old money" },
-        { id: 3, name: "Casual" },
-        { id: 4, name: "Dark" },
-    ];
-
-    const clothesType = [
-        { id: 1, name: "T-shirt" },
-        { id: 2, name: "Hoodies" },
-        { id: 3, name: "Pants" },
-        { id: 4, name: "Jewelery" },
-    ];
-    const [keywords, setKeywords] = useState([])
     const { user, error, isLoading } = useUser();
+    const [videos, setVideos] = useState([]);
+    const [clothingCategories, setClothingCategories] = useState([]);
+    const [clothingTypes, setClothingTypes] = useState([]);
+
+    
+
+                                                                                /*
+    useEffect(() => {
+
+              getVideos("streetwear")
+              .then(data => setVideos(data))
+              .catch(error => console.error('Error:', error));
 
 
-    function redirectRequest() {
-        window.location.href = `/user/feed/result?keywords=${keywords}`;
+          
+        }, []);
+        console.log(videos);
 
-    }
-    function handleSelect(category,number) {
+*/
+    const [clothes, setClothes] = useState([
+        { id: 1, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
+        { id: 2, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
+        { id: 3, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
+        { id: 4, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
+        { id: 5, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" }
 
-        if ((keywords.length) < 2) {
-
-        setKeywords(prevKeywords => [...prevKeywords, category]);
-        document.getElementById(`btn${number}`).style.display="none";
-        document.getElementById("message").innerText = 
-        "You have selected " + category;
-        }
-        else {
-            document.getElementById("message")
-            document.getElementById("message").innerText = 
-            "You selected max options!";
-            document.getElementById("display").innerHTML="<h1 class='label-text font-black mt-5'>Thank you for providing information, redirecting to result page</h1><br/><span class='loading loading-ring loading-lg text-black'></span>"
-            setTimeout(redirectRequest, 3000);
-
-        }
-    }
+    ]);
 
     return (
     <div>
@@ -87,43 +76,39 @@ function Feed() {
             </div>
         </header>
         {user ? (
-        <main className="flex min-h-screen">
-            
-        <label className="form-control w-full bg-white flex justify-center items-center" id="display">
-                    <div className="label">
-                        <span className="label-text font-black text-[20px]">Select clothes keywords related to you (max 3)</span>
-                    </div>
+        <main className="main">
+            <div className="hero min-h-screen bg-white">
                 
-                    <div className="bg-white" >
-
-                    {categories.map((e, index) => (
-
-                        <button key={index} className="btn glass m-3" id={"btn" + (index+1)} onClick={() => handleSelect(e.name,e.id)}>{e.name}</button>
+                                      
+                <div className="text-center text-neutral-content">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-center m-[100px]">
 
 
-                    ))}
-                    
-                    
 
-                    <div className="">
-                    {clothesType.map((e, index) => (
-                        <button key={index} className="btn glass m-3" id={"btn" + (index+5)} onClick={() => handleSelect(e.name,e.id+4)}>{e.name}</button>
-
-
-                    ))}
-                    <div className="toast toast-end ">
-                        <div className="alert alert-info ">
-                          <span id="message"></span>
+                        {clothes.map((e, index) => (
+                        <div key={e.id} className="card  h-[25rem] bg-gradient-to-r from-[#000000] to-[#1c1f29] shadow-xl">
+                            <figure>
+                                <img src={e.url} className="w-full max-h-[15rem] object-cover" alt="Video Cover" />
+                            </figure>
+                            <div className="card-body">
+                                <h2 className="card-title flex justify-between items-center">
+                                    <span>{/*e.author.nickname.slice(0, 6)*/}</span>
+                                    <div className="badge badge-secondary bg-white border-white">🔥TOP</div>
+                                </h2>
+                                <p className="text-[15px] text-left">{/*e.title.slice(0, 28)*/}...</p>
+                                <div className="card-actions justify-end">
+                                    <div className="badge badge-outline">{e.genre}</div>
+                                    <div className="badge badge-outline">{e.type}</div>
+                                </div>
+                            </div>
                         </div>
+                        ))}
 
-                      </div>
+                        
 
                     </div>
-                    </div>
-                </label>
-
-            
-
+                </div>
+            </div>
         </main>
          ) : (
             <div className="hero min-h-screen" id="hero"
