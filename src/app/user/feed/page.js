@@ -21,7 +21,7 @@ function Feed() {
         { id: 4, name: "Jewelery" },
     ];
     const [keywords, setKeywords] = useState([])
-    const { user, error, isLoading } = useUser();
+    const { user } = useUser();
 
 
     function redirectRequest() {

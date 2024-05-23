@@ -60,7 +60,7 @@ function Home() {
           className="mb-5 lg:text-[22px]  md:text-[17px] sm:text-[18px] text-[18px] text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#001354]">
           Celebrate the joy of finding new clothes <br /> in much easier way than ever before, <br /> from designers for
           clients</p>
-          {!user ? (<LoginButton>Log in with tiktok</LoginButton>) : (<button className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}}>You are logged in.</button>)}
+          {!user ? (<LoginButton>Log in</LoginButton>) : (<button className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}}>You are logged in.</button>)}
         <button>
           <Link href="/#about"
             className="btn btn-sm bg-transparent border-none shadow-none h-9 ml-2 text-[16px] hover:bg-[#eaeefe27] "
