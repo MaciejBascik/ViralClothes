@@ -3,10 +3,13 @@ import { FaArrowRight } from "react-icons/fa6";
 import LoginButton from '../../../components/LoginButton';
 import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0/client';
-function Home() {
+import LoadingPage from "../loading";
+function Home() { 
+  
 
-  const { user, error, isLoading } = useUser();
-
+  const { user, isLoading, error } = useUser();
+  if(isLoading) return <LoadingPage/>;
+  if(error) return <h1>Error!</h1>;
   return (
     <><header className="flex items-center justify-between font-['DM Sans']">
   <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row">

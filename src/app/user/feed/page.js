@@ -4,7 +4,7 @@ import Link from "next/link";
 import getVideos from "../../../../pages/api/fetch";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoginButton from "../../../../components/LoginButton";
-
+import LoadingPage from "@/app/loading";
 
 function Feed() {
     const categories = [
@@ -21,8 +21,9 @@ function Feed() {
         { id: 4, name: "Jewelery" },
     ];
     const [keywords, setKeywords] = useState([])
-    const { user } = useUser();
-
+    const { user, isLoading, error } = useUser();
+    if(isLoading) return <LoadingPage/>;
+    if(error) return <h1>Error!</h1>;
 
     function redirectRequest() {
         window.location.href = `/user/feed/result?keywords=${keywords}`;
@@ -91,7 +92,7 @@ function Feed() {
             
         <label className="form-control w-full bg-white flex justify-center items-center" id="display">
                     <div className="label">
-                        <span className="label-text font-black text-[20px]">Select clothes keywords related to you (max 3)</span>
+                        <span className="label-text font-black text-[20px]">Select clothes keywords related to you (choose 3)</span>
                     </div>
                 
                     <div className="bg-white" >
