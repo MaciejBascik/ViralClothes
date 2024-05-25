@@ -5,8 +5,7 @@ import Image from "next/image";
 import { getVideos } from "../../../../../lib/apiGetVideos";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoginButton from "../../../../../components/LoginButton";
-import { useSearchParams } from 'next/navigation'
-
+import { useSearchParams,useRouter  } from 'next/navigation'
 
 let responseData = [{
     "code": 0,
@@ -590,11 +589,22 @@ let responseData = [{
 
 
 
-function Feed() {
+
+function Results() {
     const { user, error, isLoading } = useUser();
     const [videos, setVideos] = useState([]);
     const searchParams = useSearchParams()
-    const search = searchParams.get('keywords')
+    const router = useRouter();
+
+    const handleDetails = (id) => {
+      const resData = responseData[0]?.data?.videos.find(v => v.video_id === id);
+      console.log(resData)
+      if (resData) {
+        router.push(`/user/feed/result/${id}?video=${encodeURIComponent(JSON.stringify(resData))}`);
+    } else {
+        console.log("curvba");
+    }
+  };
                             /*                                                    
     useEffect(() => {
 
@@ -606,17 +616,6 @@ function Feed() {
           
         }, []);
         */
-        console.log(responseData[0].data.videos);
-
-
-    const [clothes, setClothes] = useState([
-        { id: 1, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
-        { id: 2, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
-        { id: 3, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
-        { id: 4, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" },
-        { id: 5, name: "shirt", url: "https://th.bing.com/th/id/OIP.KH4lvMz48ta9w0s2pqLelwHaHa?rs=1&pid=ImgDetMain", type: "T-shirts", genre: "Streetwear", desc: "Ale spoko koszulka przewiewna eszkere" }
-
-    ]);
 
     return (
     <div>
@@ -668,9 +667,9 @@ function Feed() {
 
 
                         {responseData[0].data.videos.map((e, index) => (
-                        <div key={e.video_id} className="card  h-[30rem] w-[16rem] bg-gradient-to-r from-[#000000] to-[#1c1f29] shadow-xl">
+                        <div key={index} className="card  h-[30rem] w-[16rem] bg-gradient-to-r from-[#000000] to-[#1c1f29] shadow-xl">
                             <figure>
-                                <img src={e.cover} className="w-[100%] max-h-[500px]"   alt="Video Cover" />
+                                <img src={e.ai_dynamic_cover} className="w-[100%] max-h-[500px]"   alt="Video Cover" />
                             </figure>
                             <div className="card-body p-[25px] ">
                                 <h2 className="card-title flex justify-between items-center">
@@ -688,7 +687,7 @@ function Feed() {
                                                                        
                                 </div>
                                 <div className="card-actions flex-col 7 w-[30%]">
-                                    <button className="btn glass justify-end min-h-[15px] min-w-[65px] text-[13px] text-center items-center">See <br/> more</button>
+                                    <button className="btn glass justify-end min-h-[15px] min-w-[65px] text-[13px] text-center items-center" onClick={() => handleDetails(e.video_id)}>See <br/> more</button>
                                                                        
                                 </div>
 
@@ -730,4 +729,4 @@ function Feed() {
 </div>
     );
 }
-export default Feed;
+export default Results;
