@@ -38,7 +38,7 @@ function Home() {
       {user ? (
         <div>
       <li style={{color:"black", fontWeight:"500"}}>
-        <Link href="/user/info">@{user.nickname}</Link>
+        <Link>@{user.nickname}</Link>
       </li>
 
       </div>
