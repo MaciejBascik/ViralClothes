@@ -58,7 +58,7 @@ function Results() {
                     {user ? (
                         <div>
                     <li style={{color:"black", fontWeight:"500"}}>
-                        <Link>@{user.nickname}</Link>
+                        <a>@{user.nickname}</a>
                     </li>
 
                     </div>
