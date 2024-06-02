@@ -1,13 +1,11 @@
-# APP OVERVIEW
 
-https://github.com/MaciejBascik/SoundSwipe/assets/96304157/863448bc-1671-4253-844a-e13055df8767
 
-## ViralClothes
+# ViralClothes
 
-# App Description:
+## App Description:
 Discover the latest fashion trends on TikTok with ViralClothes, your ultimate style companion. Whether you're looking for the hottest outfits, stylish accessories, or seasonal must-haves, ViralClothes brings you the trending clothes everyone's talking about. Simply enter your desired keywords, and watch as ViralClothes curates a personalized list of TikTok's most viral fashion items.
 
-# Key Features:
+## Key Features:
 - Trend Detection: Stay ahead of the fashion curve by exploring trending clothes on TikTok based on your search keywords.
 - Personalized Recommendations: Get tailored fashion suggestions that match your style preferences and current trends.
 - Real-Time Updates: Enjoy up-to-the-minute updates on what's hot in the fashion world, ensuring you never miss out on the latest trends.
@@ -17,6 +15,10 @@ Discover the latest fashion trends on TikTok with ViralClothes, your ultimate st
 - Share with Friends: Share your top picks with friends and followers on social media platforms with just a tap.
   
 Transform your wardrobe with ViralClothes, the app that keeps you stylishly in sync with the latest TikTok fashion trends. Download ViralClothes today and start trending!
+
+# APP OVERVIEW
+
+https://github.com/MaciejBascik/SoundSwipe/assets/96304157/863448bc-1671-4253-844a-e13055df8767
 
 ## Getting Started
 
