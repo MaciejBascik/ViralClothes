@@ -1,3 +1,7 @@
+# APP OVERVIEW
+
+https://github.com/MaciejBascik/SoundSwipe/assets/96304157/863448bc-1671-4253-844a-e13055df8767
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
