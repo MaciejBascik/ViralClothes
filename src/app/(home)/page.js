@@ -5,9 +5,8 @@ import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoadingPage from "../loading";
 function Home() { 
-  console.log(useUser());
-
   const { user, isLoading, error } = useUser();
+  if(!user) return <h1>Please log in!</h1>;
   if(isLoading) return <LoadingPage/>;
   if(error) return <h1>Error!!</h1>;
   return (
