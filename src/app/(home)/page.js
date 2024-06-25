@@ -9,7 +9,7 @@ function Home() {
 
   const { user, isLoading, error } = useUser();
   if(isLoading) return <LoadingPage/>;
-  if(error) return <h1>Error!</h1>;
+  if(error) return <h1>Error!!</h1>;
   return (
     <><header className="flex items-center justify-between font-['DM Sans']">
   <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row">
