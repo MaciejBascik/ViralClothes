@@ -21,7 +21,7 @@ function Feed() {
         { id: 4, name: "Jewelery" },
     ];
     const [keywords, setKeywords] = useState([])
-    const { user, isLoading, error } = useUser();
+    const { user, isLoading, error } = useUser() || {};
     if(isLoading) return <LoadingPage/>;
     if(error) return <h1>Error!</h1>;
 

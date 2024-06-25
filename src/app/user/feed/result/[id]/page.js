@@ -14,7 +14,7 @@ const CardDetails = () => {
 
     const video = JSON.parse(searchParams.get("video"));
 
-    const { user, error, isLoading } = useUser();
+    const { user, error, isLoading } = useUser() || {};
     if(isLoading) return <LoadingPage/>;
     if(error) return <h1>Error!</h1>;
   console.log(video)

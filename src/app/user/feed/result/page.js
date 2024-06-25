@@ -9,7 +9,7 @@ import { useSearchParams,useRouter  } from 'next/navigation'
 import LoadingPage from "@/app/loading";
 
 function Results() {
-    const { user, error, isLoading } = useUser();
+    const { user, error, isLoading } = useUser() || {};
     const [videos, setVideos] = useState([]);
     const searchParams = useSearchParams();
     let search = searchParams.get("keywords");
