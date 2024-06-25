@@ -46,7 +46,7 @@ async function RootLayout({ children }) {
         </nav> 
         <nav>
         <h6 className="footer-title">Developer</h6> 
-        <a href="https://github.com/MaciejBascik" className="link link-hover">Maciej Baścik</a>
+        <a href="https://bascikportfolio.vercel.app/" className="link link-hover">Maciej Baścik</a>
         </nav> 
         <nav>
         <h6 className="footer-title">Legal</h6> 

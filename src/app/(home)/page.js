@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoadingPage from "../loading";
 function Home() { 
-  
+  console.log(useUser());
 
   const { user, isLoading, error } = useUser();
   if(isLoading) return <LoadingPage/>;

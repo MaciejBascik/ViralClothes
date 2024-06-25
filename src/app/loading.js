@@ -8,7 +8,7 @@ function LoadingPage() {
         <h1 className="text-black">Just give us a second.</h1>
       </div>
       <div className='flex justify-center items-center'>
-        <span class='loading loading-ring loading-lg text-black'></span>
+        <span className='loading loading-ring loading-lg text-black'></span>
       </div>
     </div>
   );
