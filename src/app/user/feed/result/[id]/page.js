@@ -8,6 +8,7 @@ import { FaRegFlag } from "react-icons/fa6";
 import Link from "next/link";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useSearchParams  } from 'next/navigation'
+import LogoutButton from "../../../../../../components/LogoutButton";
 const CardDetails = () => {
     const searchParams = useSearchParams()
 
@@ -44,14 +45,17 @@ const CardDetails = () => {
 
       )}
 
-      {user ? (
+      {user ? (<>
         <div>
+        <li style={{color:"black", opacity:"60%"}}>
+      <LogoutButton>Log out</LogoutButton>
+    </li>
       <li style={{color:"black", fontWeight:"500"}}>
         <a>@{user.nickname}</a>
       </li>
 
       </div>
-      ) : (
+      </>) : (
       <li className="md:ml-2">
         <LoginButton>Log in</LoginButton>
       </li>

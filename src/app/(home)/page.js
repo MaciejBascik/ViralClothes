@@ -1,7 +1,7 @@
 'use client'
 import { FaArrowRight } from "react-icons/fa6";
 import LoginButton from '../../../components/LoginButton';
-import Link from "next/link";
+import LogoutButton from "../../../components/LogoutButton";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoadingPage from "../loading";
 function Home() { 
@@ -12,31 +12,35 @@ function Home() {
     <><header className="flex items-center justify-between font-['DM Sans']">
   <div className="navbar bg-[#EAEEFE] flex flex-col md:flex-row">
     <div className="flex-1">
-      <Link href="/" className="btn btn-ghost text-[18px] md:ml-10 font-light" style={{color:"black"}}>made by <span
-        className="font-[600]">MaciejBaścik</span></Link>
+      <a href="/" className="btn btn-ghost text-[18px] md:ml-10 font-light" style={{color:"black"}}>made by <span
+        className="font-[600]">MaciejBaścik</span></a>
     </div>
 
     <ul className="menu menu-horizontal px-2 text-[16px] md:mr-10">
       <li style={{color:"black", opacity:"60%"}}>
-        <Link href="/#about">About</Link>
+        <a href="/#about">About</a>
       </li>
       <li style={{color:"black", opacity:"60%"}}>
-        <Link href="/#about">Features</Link>
+        <a href="/#about">Features</a>
       </li>
       <li style={{color:"black", opacity:"60%"}}>
-        <Link href="mailto:maciej.b4scik@gmail.com">Help</Link>
+        <a href="mailto:maciej.b4scik@gmail.com">Help</a>
       </li>
       {user && (
+        <>
       <li style={{color:"black", opacity:"60%"}}>
-        <Link href="/user/feed">Feed</Link>
+        <a href="/user/feed">Feed</a>
       </li>
-
+      <li style={{color:"black", opacity:"60%"}}>
+      <LogoutButton>Log out</LogoutButton>
+    </li>
+    </>
       )}
 
       {user ? (
         <div>
       <li style={{color:"black", fontWeight:"500"}}>
-        <Link>@{user.nickname}</Link>
+        <a>@{user.nickname}</a>
       </li>
 
       </div>
@@ -63,11 +67,11 @@ function Home() {
           clients</p>
           {!user ? (<LoginButton>Log in</LoginButton>) : (<button className="btn btn-sm bg-black h-9  text-[16px]" style={{color:"white"}}>You are logged in.</button>)}
         <button>
-          <Link href="/#about"
+          <a href="/#about"
             className="btn btn-sm bg-transparent border-none shadow-none h-9 ml-2 text-[16px] hover:bg-[#eaeefe27] "
             style={{color:"black"}}>Learn more
           <FaArrowRight />
-          </Link>
+          </a>
           </button>
       </div>
     </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import getVideos from "../../../../pages/api/fetch";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoginButton from "../../../../components/LoginButton";
+import LogoutButton from "../../../../components/LogoutButton";
 import LoadingPage from "@/app/loading";
 
 function Feed() {
@@ -72,13 +73,16 @@ function Feed() {
                         <Link href="/user/feed">Feed</Link>
                     </li>
                     {user ? (
+                        <>
                         <div>
                     <li style={{color:"black", fontWeight:"500"}}>
                         <a>@{user.nickname}</a>
                     </li>
-
+                    <li style={{color:"black", opacity:"60%"}}>
+                    <LogoutButton>Log out</LogoutButton>
+                    </li>
                     </div>
-                    ) : (
+                    </>) : (
                     <li className="md:ml-2">
                         <LoginButton>Log in</LoginButton>
                     </li>

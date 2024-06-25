@@ -7,7 +7,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import LoginButton from "../../../../../components/LoginButton";
 import { useSearchParams,useRouter  } from 'next/navigation'
 import LoadingPage from "@/app/loading";
-
+import LogoutButton from "../../../../../components/LogoutButton";
 function Results() {
     const { user, error, isLoading } = useUser() || {};
     const [videos, setVideos] = useState([]);
@@ -62,11 +62,14 @@ function Results() {
                     </li>
 
                     </div>
-                    ) : (
+                    ) : (<>
                     <li className="md:ml-2">
                         <LoginButton>Log in</LoginButton>
                     </li>
-                    )}
+                    <li style={{color:"black", opacity:"60%"}}>
+                    <LogoutButton>Log out</LogoutButton>
+                    </li>
+                    </>)}
                     </ul>
 
             </div>
