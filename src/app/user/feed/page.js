@@ -4,9 +4,8 @@ import Link from "next/link";
 import getVideos from "../../../../pages/api/fetch";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import LoginButton from "../../../../components/LoginButton";
-import LogoutButton from "../../../../components/LogoutButton";
 import LoadingPage from "@/app/loading";
-
+import LogoutButton from "../../../../components/LogoutButton";
 function Feed() {
     const categories = [
         { id: 1, name: "Streetwear" },
@@ -73,8 +72,7 @@ function Feed() {
                         <Link href="/user/feed">Feed</Link>
                     </li>
                     {user ? (
-                        <>
-                        <div>
+                        <div className="flex flex-col">
                     <li style={{color:"black", fontWeight:"500"}}>
                         <a>@{user.nickname}</a>
                     </li>
@@ -82,7 +80,7 @@ function Feed() {
                     <LogoutButton>Log out</LogoutButton>
                     </li>
                     </div>
-                    </>) : (
+                    ) : (
                     <li className="md:ml-2">
                         <LoginButton>Log in</LoginButton>
                     </li>
